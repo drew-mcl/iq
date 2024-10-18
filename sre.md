@@ -4,15 +4,20 @@ Focus Areas: Ansible, GitLab, GoLang/Python, Kubernetes
 
 Ansible
 
-1.	Explain the architecture of Ansible and how it manages nodes without requiring agents.
-    •	Answer: Ansible uses an agentless architecture, communicating over SSH (or WinRM for Windows) to execute tasks on remote nodes. It leverages    YAML-based playbooks to define automation tasks, eliminating the need for agent installation on target machines.
-2.	How do you manage sensitive data in Ansible playbooks?
+	1.	Explain the architecture of Ansible and how it manages nodes without requiring agents.
+	•	Answer: Ansible uses an agentless architecture, communicating over SSH (or WinRM for Windows) to execute tasks on remote nodes. It leverages 
+    YAML-based playbooks to define automation tasks, eliminating the need for agent installation on target machines.
+
+	2.	How do you manage sensitive data in Ansible playbooks?
 	•	Answer: By using Ansible Vault to encrypt sensitive information like passwords and keys within playbooks, ensuring secure data handling.
-	3.	What is the difference between a playbook and a role in Ansible?
+	
+    3.	What is the difference between a playbook and a role in Ansible?
 	•	Answer: A playbook is a YAML file containing a series of tasks to be executed on hosts. A role is a reusable and portable collection of tasks, templates, and variables, promoting modularity and organization.
-	4.	Describe how you would use Ansible’s dynamic inventory feature.
+	
+    4.	Describe how you would use Ansible’s dynamic inventory feature.
 	•	Answer: Dynamic inventory allows Ansible to query external data sources (like cloud providers) to obtain the list of hosts to manage, enabling real-time inventory updates.
-	5.	Can you explain idempotency in Ansible and why it’s important?
+	
+    5.	Can you explain idempotency in Ansible and why it’s important?
 	•	Answer: Idempotency ensures that running a playbook multiple times yields the same result without unintended side effects, crucial for reliable and predictable automation.
 	6.	How do you handle error handling and debugging in Ansible?
 	•	Answer: By using Ansible’s verbosity options (-v, -vv, etc.), checking the return codes, employing the ignore_errors parameter, and using the debug module to output variable values.
@@ -206,4 +211,3 @@ Prometheus
 	•	Answer: By using visualization tools like Grafana, which can query Prometheus and create dashboards and graphs to display metrics data.
 	15.	Explain how you can use Prometheus in conjunction with Grafana for monitoring.
 	•	Answer: Prometheus collects and stores the metrics, while Grafana connects to Prometheus as a data source to visualize the metrics through customizable dashboards and panels.
-ß
