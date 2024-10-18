@@ -5,14 +5,13 @@ Focus Areas: Ansible, GitLab, GoLang/Python, Kubernetes
 Ansible
 
 	1.	Explain the architecture of Ansible and how it manages nodes without requiring agents.
-	•	Answer: Ansible uses an agentless architecture, communicating over SSH (or WinRM for Windows) to execute tasks on remote nodes. It leverages 
-    YAML-based playbooks to define automation tasks, eliminating the need for agent installation on target machines.
+	•	Answer: Ansible uses an agentless architecture, communicating over SSH (or WinRM for Windows) to execute tasks on remote nodes. It leverages    YAML-based playbooks to define automation tasks, eliminating the need for agent installation on target machines.
 
 	2.	How do you manage sensitive data in Ansible playbooks?
 	•	Answer: By using Ansible Vault to encrypt sensitive information like passwords and keys within playbooks, ensuring secure data handling.
 	
     3.	What is the difference between a playbook and a role in Ansible?
-	•	Answer: A playbook is a YAML file containing a series of tasks to be executed on hosts. A role is a reusable and portable collection of tasks, templates, and variables, promoting modularity and organization.
+	•	Answer: A playbook is a YAML file containing a series of tasks to be executed on hosts. A role is a reusable and portable collection of tasks,  templates, and variables, promoting modularity and organization.
 	
     4.	Describe how you would use Ansible’s dynamic inventory feature.
 	•	Answer: Dynamic inventory allows Ansible to query external data sources (like cloud providers) to obtain the list of hosts to manage, enabling real-time inventory updates.
@@ -133,6 +132,84 @@ Kubernetes
 	•	Answer: Using PersistentVolumes (PVs) and PersistentVolumeClaims (PVCs) to abstract storage provisioning, allowing Pods to use storage independent of the underlying infrastructure.
 	15.	Can you describe a challenging Kubernetes issue you’ve resolved?
 	•	Answer: [Expect the candidate to provide a specific example involving troubleshooting, root cause analysis, and the solution implemented.]
+SLOs/SLIs
+
+	1.	What are SLIs and SLOs, and how do they relate to each other?
+	•	Answer: An SLI (Service Level Indicator) is a quantitative measure of some aspect of the service’s performance (e.g., latency, error rate). An SLO (Service Level Objective) is a target value or range for an SLI, defining the acceptable level of service.
+	2.	Explain the importance of error budgets in SRE practices.
+	•	Answer: Error budgets quantify the permissible amount of unreliability in a service, balancing innovation and reliability. They help teams make informed decisions about releasing new features versus focusing on stability.
+	3.	How would you define and measure availability for a web service?
+	•	Answer: Availability can be defined as the percentage of time a service is operational and accessible. It is measured by tracking uptime versus total time, often using SLIs like successful request rates.
+	4.	Describe the steps to set up effective SLOs for a new service.
+	•	Answer: Identify critical user journeys, select relevant SLIs, determine achievable and meaningful SLO targets based on historical data and business needs, and implement monitoring to track performance.
+	5.	What is the difference between an SLA and an SLO?
+	•	Answer: An SLA (Service Level Agreement) is a formal contract with external parties that includes consequences for failing to meet objectives. An SLO is an internal goal for service performance without legal obligations.
+	6.	How do you use SLIs to drive operational improvements?
+	•	Answer: By monitoring SLIs, teams can identify trends, detect deviations from SLOs, and prioritize actions to improve service reliability and performance based on data.
+	7.	Explain how you would handle a situation where your service consistently exceeds its SLOs.
+	•	Answer: Re-evaluate SLOs to ensure they are appropriately challenging, consider reallocating resources to innovation, or adjust error budgets to allow for more risk-taking in development.
+	8.	What factors should be considered when choosing SLIs for a service?
+	•	Answer: Relevance to user experience, measurability, sensitivity to changes, and alignment with business objectives.
+	9.	Can you give an example of a latency SLI and its corresponding SLO?
+	•	Answer: SLI: The 95th percentile of request latency. SLO: 95% of requests should have a latency below 200 milliseconds over a rolling 30-day period.
+	10.	How do you communicate SLO achievements or breaches to stakeholders?
+	•	Answer: Through regular reporting dashboards, alerts for breaches, meetings to discuss implications, and documentation outlining causes and remediation steps.
+
+Elasticsearch
+
+	1.	What is Elasticsearch, and what are its primary use cases?
+	•	Answer: Elasticsearch is a distributed, RESTful search and analytics engine built on Apache Lucene. It’s used for full-text search, log analytics, and real-time data exploration.
+	2.	Explain the architecture of an Elasticsearch cluster.
+	•	Answer: An Elasticsearch cluster consists of one or more nodes (servers) that hold data and provide indexing and search capabilities. Data is organized into indices, which are split into shards and replicas for scalability and redundancy.
+	3.	How do you scale Elasticsearch to handle large volumes of data?
+	•	Answer: By adding more nodes to the cluster, adjusting shard allocation, optimizing indexing strategies, and ensuring proper hardware resources are allocated.
+	4.	What are shards and replicas in Elasticsearch, and why are they important?
+	•	Answer: Shards are subdivisions of an index that allow for distributed storage. Replicas are copies of shards that provide redundancy and improve search throughput. Together, they enable scalability and high availability.
+	5.	Describe how you would optimize search performance in Elasticsearch.
+	•	Answer: Techniques include using appropriate indexing strategies, optimizing queries, configuring the correct number of shards and replicas, and tuning hardware resources like CPU and memory.
+	6.	How do you handle data backup and recovery in Elasticsearch?
+	•	Answer: By using snapshot and restore features to take backups of indices to a repository (like shared file system or cloud storage) and restoring them when needed.
+	7.	Explain the concept of an Elasticsearch index template.
+	•	Answer: Index templates allow you to define settings and mappings that will automatically be applied to new indices matching a naming pattern, ensuring consistent configuration.
+	8.	What is the ELK stack, and how does Elasticsearch fit into it?
+	•	Answer: The ELK stack consists of Elasticsearch, Logstash, and Kibana. Elasticsearch stores and indexes the data, Logstash collects and processes logs, and Kibana visualizes the data.
+	9.	How do you secure an Elasticsearch cluster?
+	•	Answer: By enabling security features like authentication and authorization, encrypting communications with TLS, securing cluster access, and using security plugins or features provided by Elastic.
+	10.	Describe a scenario where you had to troubleshoot a performance issue in Elasticsearch.
+	•	Answer: [Expect the candidate to provide a specific example involving identifying bottlenecks, analyzing query performance, and implementing optimizations.]
+
+Prometheus
+
+	1.	What is Prometheus, and what is it used for?
+	•	Answer: Prometheus is an open-source systems monitoring and alerting toolkit that collects and stores metrics as time series data, providing powerful queries and real-time alerting.
+	2.	Explain the Prometheus architecture and its main components.
+	•	Answer: The main components are the Prometheus server (which scrapes and stores metrics), client libraries (for instrumenting application code), exporters (to expose metrics), the alertmanager (for handling alerts), and visualization tools like Grafana.
+	3.	How does Prometheus collect metrics from monitored targets?
+	•	Answer: Prometheus uses a pull model, where it periodically scrapes HTTP endpoints exposed by the targets or exporters to collect metrics.
+	4.	What are exporters in Prometheus, and can you name some common ones?
+	•	Answer: Exporters are tools that expose existing metrics from third-party systems as Prometheus metrics. Common exporters include Node Exporter (for hardware and OS metrics), Blackbox Exporter (for probing endpoints), and MySQL Exporter.
+	5.	Describe how you would set up alerting in Prometheus.
+	•	Answer: By defining alerting rules in Prometheus that specify conditions for alerts, configuring the Alertmanager to handle notifications, and setting up receivers (like email, Slack) for alerts.
+	6.	Explain Prometheus’ query language, PromQL, and provide an example query.
+	•	Answer: PromQL is a powerful query language used to select and aggregate time series data in Prometheus. Example: rate(http_requests_total[5m]) calculates the per-second rate of HTTP requests over the last 5 minutes.
+	7.	How do you handle high cardinality metrics in Prometheus?
+	•	Answer: By avoiding unnecessary labels, aggregating metrics, and selectively instrumenting code to limit the number of unique time series.
+	8.	What is the purpose of recording rules in Prometheus?
+	•	Answer: Recording rules precompute and store frequently needed or computationally intensive queries as new time series, improving query performance and reducing computational load.
+	9.	Can you integrate Prometheus with Kubernetes? If so, how?
+	•	Answer: Yes, by deploying Prometheus in the cluster and using Kubernetes service discovery mechanisms to automatically discover and scrape metrics from Pods, Nodes, and Services.
+	10.	Describe a time when you used Prometheus to diagnose a production issue.
+	•	Answer: [Expect the candidate to provide a specific example involving metric analysis, identifying anomalies, and taking corrective actions.]
+	11.	How does Prometheus handle data retention and storage scaling?
+	•	Answer: Prometheus stores data locally and allows configuration of data retention policies. For long-term storage and scaling, remote storage solutions or integrations with systems like Thanos or Cortex can be used.
+	12.	Explain the difference between counters and gauges in Prometheus metrics.
+	•	Answer: Counters are cumulative metrics that only increase (e.g., total requests), while gauges represent a value that can go up or down (e.g., current memory usage).
+	13.	What strategies can you employ to secure a Prometheus deployment?
+	•	Answer: Implementing HTTPS/TLS for secure communication, enabling authentication and authorization proxies, restricting network access, and securing access to the metrics endpoints.
+	14.	How do you visualize Prometheus metrics?
+	•	Answer: By using visualization tools like Grafana, which can query Prometheus and create dashboards and graphs to display metrics data.
+	15.	Explain how you can use Prometheus in conjunction with Grafana for monitoring.
+	•	Answer: Prometheus collects and stores the metrics, while Grafana connects to Prometheus as a data source to visualize the metrics through customizable dashboards and panels.
 SLOs/SLIs
 
 	1.	What are SLIs and SLOs, and how do they relate to each other?
