@@ -4,9 +4,9 @@ Focus Areas: Ansible, GitLab, GoLang/Python, Kubernetes
 
 Ansible
 
-	1.	Explain the architecture of Ansible and how it manages nodes without requiring agents.
-	•	Answer: Ansible uses an agentless architecture, communicating over SSH (or WinRM for Windows) to execute tasks on remote nodes. It leverages YAML-based playbooks to define automation tasks, eliminating the need for agent installation on target machines.
-	2.	How do you manage sensitive data in Ansible playbooks?
+1.	Explain the architecture of Ansible and how it manages nodes without requiring agents.
+    •	Answer: Ansible uses an agentless architecture, communicating over SSH (or WinRM for Windows) to execute tasks on remote nodes. It leverages    YAML-based playbooks to define automation tasks, eliminating the need for agent installation on target machines.
+2.	How do you manage sensitive data in Ansible playbooks?
 	•	Answer: By using Ansible Vault to encrypt sensitive information like passwords and keys within playbooks, ensuring secure data handling.
 	3.	What is the difference between a playbook and a role in Ansible?
 	•	Answer: A playbook is a YAML file containing a series of tasks to be executed on hosts. A role is a reusable and portable collection of tasks, templates, and variables, promoting modularity and organization.
